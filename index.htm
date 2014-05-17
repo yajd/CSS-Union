@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+	function union() {
+		var copy = document.querySelector('#copy_this');
+		var is = document.querySelector('#is_this');
+		
+		var make = document.querySelector('#make_this');
+		
+		var copySplit = copy.value.split('\n');
+		var isSplit = is.value.split('\n');
+		
+		var makeSplit = [];
+		
+		for (var i=0; i<copySplit.length; i++) {
+			if (copySplit[i] != isSplit[i]) {
+				makeSplit.push(copySplit[i]);
+			}
+		}
+		
+		make.value = makeSplit.join('\n');
+	}
+</script>
+</head>
+<body>
+copy the css from computed, so every line property must match in copythis and isthis<br>
+Css that we want it to look like<br>
+<textarea id="copy_this"></textarea><br>
+Css that it is right now<br>
+<textarea id="is_this"></textarea><br>
+<input type="button" value="union" onclick="union()"><br>
+Make is right now to this<br>
+<textarea id="make_this"></textarea><br>
+
+</body>
+</html>
